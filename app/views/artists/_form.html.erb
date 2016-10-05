@@ -1,0 +1,41 @@
+<%= form_for @artist, :html => { :class => "form-horizontal artist" } do |f| %>
+
+  <% if @artist.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @artist.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dob, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :dob, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:dob) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                artists_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

@@ -12,9 +12,9 @@ Then(/^I should be able to see the new artist's page$/) do
 end
 
 When(/^I try to add a new artist without a name$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button 'Create Artist'
 end
 
 Then(/^I should see some errors on the page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  assert page.has_css?('div.field_with_errors')
 end

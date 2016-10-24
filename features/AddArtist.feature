@@ -13,6 +13,7 @@ Feature: Artists and artist page
   Scenario: Add an artist without a name
     Given I'm on the artist creation page
     When I try to add a new artist without a name
+    Then show me the page
     Then I should see some errors on the page
 
 

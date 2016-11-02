@@ -12,4 +12,12 @@
 
 class Review < ActiveRecord::Base
   belongs_to :song
+  
+  # validates :song_id, presence: true
+  # this only validates if the song id is typed into form
+  
+  validates :song, presence: true
+  validates :song, presence: { message: "issss noooo goood!!!."}
+  
+  # validates :rating, presence: true, numericality: {greater_than: 0, less_than: 6}
 end

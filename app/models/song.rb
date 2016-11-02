@@ -14,6 +14,11 @@
 
 class Song < ActiveRecord::Base
   belongs_to :artist
-  
   has_many :reviews
+  
+  # validates :title, :presence => true
+  validates :title, presence: true
+  validates :title, uniqueness: true, length: {minimum: 4}
+  validates :price, presence: true, numericality: true
+  
 end

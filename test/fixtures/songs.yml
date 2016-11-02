@@ -4,7 +4,6 @@
 #
 #  id         :integer          not null, primary key
 #  title      :string
-#  genre      :string
 #  length     :time
 #  price      :float
 #  artist_id  :integer

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031193507) do
+ActiveRecord::Schema.define(version: 20161102200004) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -26,18 +26,19 @@ ActiveRecord::Schema.define(version: 20161031193507) do
     t.integer  "song_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "reviewer"
   end
 
   add_index "reviews", ["song_id"], name: "index_reviews_on_song_id"
 
   create_table "songs", force: :cascade do |t|
     t.string   "title"
-    t.string   "genre"
     t.time     "length"
     t.float    "price"
     t.integer  "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "genre"
   end
 
   add_index "songs", ["artist_id"], name: "index_songs_on_artist_id"

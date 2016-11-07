@@ -15,5 +15,10 @@
   <%= @review.song %>
 </p>
 
+<p>
+  <strong>Reviewer:</strong>
+  <%= @review.reviewer %>
+</p>
+
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <%= link_to 'Back', reviews_path %>

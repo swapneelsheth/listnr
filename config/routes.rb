@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :reviews
+  # resources :reviews, except: :destroy
+  
+  root 'artists#index'
+  
+  resources :reviews, only: [:index, :show]
   resources :songs
   resources :artists
   # The priority is based upon order of creation: first created -> highest priority.

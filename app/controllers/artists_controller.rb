@@ -11,6 +11,22 @@ class ArtistsController < ApplicationController
   # GET /artists/1.json
   def show
   end
+  
+  def rating
+    @rating = Artist.find(params[:id]).reviews.average(:rating)
+  end
+  
+  def sort
+    # @artists = Artist.order(params[:field])
+    # @artists = Artist.order("?", params[:field])
+    
+    @artists = []
+    if (Artist.attribute_names.include? (params[:field])) then
+      @artists = Artist.order(params[:field])
+    end
+    
+    render :index
+  end
 
   # GET /artists/new
   def new

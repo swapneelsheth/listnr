@@ -5,7 +5,17 @@ Rails.application.routes.draw do
   
   resources :reviews, only: [:index, :show]
   resources :songs
-  resources :artists
+  
+  resources :artists do
+    member do
+      get 'rating'
+    end
+    
+    collection do
+      get 'sort/:field' => 'artists#sort'
+    end
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

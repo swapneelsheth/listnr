@@ -11,6 +11,12 @@ class SongsController < ApplicationController
   # GET /songs/1.json
   def show
   end
+  
+  def search
+    @message = "Tried searching"
+    
+    flash[:notice] = "We tried searching and we're using the FlashHash"
+  end
 
   # GET /songs/new
   def new

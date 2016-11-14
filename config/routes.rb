@@ -2,6 +2,7 @@
 #
 #        Prefix Verb   URI Pattern                    Controller#Action
 #          root GET    /                              artists#index
+#        logout DELETE /search(.:format)              songs#search
 #       reviews GET    /reviews(.:format)             reviews#index
 #        review GET    /reviews/:id(.:format)         reviews#show
 #         songs GET    /songs(.:format)               songs#index
@@ -28,12 +29,15 @@ Rails.application.routes.draw do
   # resources :reviews, except: :destroy
   
   root 'artists#index'
+  # match 'search/:id', to: 'songs#search', via: :get
+  match 'search', to: 'songs#search', via: :delete, as: :logout
   
   resources :reviews, only: [:index, :show]
   resources :songs
   
   resources :artists do
     member do
+      # get 'rating', as: :cheese
       get 'rating'
     end
     

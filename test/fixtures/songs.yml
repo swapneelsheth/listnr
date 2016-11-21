@@ -15,14 +15,12 @@
 
 one:
   title: MyString
-  genre: MyString
   length: 2016-10-26 15:25:39
   price: 1.5
   artist_id: 
 
 two:
   title: MyString
-  genre: MyString
   length: 2016-10-26 15:25:39
   price: 1.5
   artist_id: 

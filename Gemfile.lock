@@ -119,6 +119,7 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     multi_test (0.1.2)
+    newrelic_rpm (3.17.1.326)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     pg (0.18.4)
@@ -224,6 +225,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails
+  newrelic_rpm
   pg
   rails (= 4.2.7.1)
   rails_12factor

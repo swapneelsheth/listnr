@@ -25,7 +25,7 @@ class ArtistsController < ApplicationController
       @artists = Artist.order(params[:field])
     end
     
-    render :index
+    render :index, layout: false
   end
 
   # GET /artists/new

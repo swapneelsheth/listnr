@@ -1,0 +1,9 @@
+<tr>
+  <td><%= song.title %></td>
+  <td><%= song.length %></td>
+  <td><%= song.price %></td>
+  <td><%= song.artist %></td>
+  <td><%= link_to 'Show', song %></td>
+  <td><%= link_to 'Edit', edit_song_path(song) %></td>
+  <td><%= link_to 'Destroy', song, method: :delete, remote: true %></td>
+</tr>

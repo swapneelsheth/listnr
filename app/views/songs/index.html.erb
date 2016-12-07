@@ -2,11 +2,10 @@
 
 <h1>Listing Songs</h1>
 
-<table>
+<table id="songs" class="table table-hover">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Genre</th>
       <th>Length</th>
       <th>Price</th>
       <th>Artist</th>
@@ -15,17 +14,7 @@
   </thead>
 
   <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.title %></td>
-        <td><%= song.length %></td>
-        <td><%= song.price %></td>
-        <td><%= song.artist %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @songs %>
   </tbody>
 </table>
 
@@ -33,6 +22,11 @@
 
 <%= button_to "Search Button", logout_path, method: :delete%>
 
+<a class="btn btn-primary" data-toggle="collapse" href="#collapseDiv">Add a new Song with AJAX</a>
+
+<div class="collapse" id="collapseDiv">
+  <%= render "form"%>
+</div>
 
 <a href="#" id="show"> Add another song with Coffeescript</a>
 
